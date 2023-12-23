@@ -2,38 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EquipmentSystem : MonoBehaviour
-{
-    [SerializeField] GameObject weaponHolder;
-    [SerializeField] GameObject weapon;
-    [SerializeField] GameObject weaponSheath;
+public class EquipmentSystem : MonoBehaviour {
+    public GameObject weapon;
+    public GameObject weaponHolder;
+    public GameObject weaponSheath;
+    public GameObject currentWeaponInHand;
+    public GameObject currentWeaponInSheath;
 
-
-    GameObject currentWeaponInHand;
-    GameObject currentWeaponInSheath;
-    void Start()
-    {
+    void Start() {
         currentWeaponInSheath = Instantiate(weapon, weaponSheath.transform);
     }
 
-    public void DrawWeapon()
-    {
+    private void Update() {
+
+    }
+
+    public void DrawWeapon() {
         currentWeaponInHand = Instantiate(weapon, weaponHolder.transform);
         Destroy(currentWeaponInSheath);
     }
 
-    public void SheathWeapon()
-    {
+    public void SheathWeapon() {
         currentWeaponInSheath = Instantiate(weapon, weaponSheath.transform);
         Destroy(currentWeaponInHand);
     }
 
-    public void StartDealDamage()
-    {
+    public void StartDealDamage() {
         currentWeaponInHand.GetComponentInChildren<DamageDealer>().StartDealDamage();
     }
-    public void EndDealDamage()
-    {
+    public void EndDealDamage() {
         currentWeaponInHand.GetComponentInChildren<DamageDealer>().EndDealDamage();
     }
 }

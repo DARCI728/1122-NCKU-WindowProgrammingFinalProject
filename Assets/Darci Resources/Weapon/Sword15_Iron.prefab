@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponLength: 2.5
   weaponDamage: 10
+  hitVFX: {fileID: 1840690549904964, guid: a8a6ba91edbeef2439175ecf0e08e6fb, type: 3}
 --- !u!1 &8947079371753237599
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,7 +60,7 @@ GameObject:
   - component: {fileID: 7433918205971402122}
   m_Layer: 0
   m_Name: Sword15_Iron
-  m_TagString: Untagged
+  m_TagString: GreatSword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

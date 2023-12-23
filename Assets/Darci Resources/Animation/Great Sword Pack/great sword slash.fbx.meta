@@ -36,7 +36,7 @@ ModelImporter:
       name: player_slash
       takeName: mixamo.com
       internalID: -203655887218126122
-      firstFrame: 15
+      firstFrame: 0
       lastFrame: 25
       wrapMode: 0
       orientationOffsetY: 0
@@ -57,7 +57,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.7106599
+      - time: 0
         functionName: StartDealDamage
         data: 
         objectReferenceParameter: {instanceID: 0}

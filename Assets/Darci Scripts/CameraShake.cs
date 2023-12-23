@@ -8,6 +8,7 @@ public class CameraShake : MonoBehaviour {
     float shakerTimer;
     float shakerTimerTotal;
     float startingIntensity;
+
     void Awake() {
         Instance = this;
         cinemachineVirtualCamera = GetComponent<CinemachineVirtualCamera>();
