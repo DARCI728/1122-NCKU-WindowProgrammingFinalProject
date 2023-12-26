@@ -29,21 +29,21 @@ public class buffchest : MonoBehaviour
     private void finish()
     {
         int buff = Random.Range(0, 4);
-            if (buff == 0)
-            {
-                buff1.transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-            }
-            else if (buff==1)
-            {
-                buff2.transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-            }
-            else if (buff == 2)
-            {
-                buff3.transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-            }
-            else
-            {
-                buff4.transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-            }
+        if (buff == 0)
+        {
+            Instantiate(buff1, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), new Quaternion(0, 0, 0, 0));
+        }
+        else if (buff==1)
+        {
+            Instantiate(buff2, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), new Quaternion(0, 0, 0, 0));
+        }
+        else if (buff == 2)
+        {
+            Instantiate(buff3, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), new Quaternion(0, 0, 0, 0));
+        }
+        else
+        {
+            Instantiate(buff4, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), new Quaternion(0, 0, 0, 0));
+        }
     }
 }

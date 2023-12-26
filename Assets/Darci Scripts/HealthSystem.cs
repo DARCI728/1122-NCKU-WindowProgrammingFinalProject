@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HealthSystem : MonoBehaviour {
-    [SerializeField] float health = 100;
+    [SerializeField] public float health = 100;
+    [SerializeField] public float defense = 0;
     [SerializeField] GameObject hitVFX;
     [SerializeField] GameObject ragdoll;
 

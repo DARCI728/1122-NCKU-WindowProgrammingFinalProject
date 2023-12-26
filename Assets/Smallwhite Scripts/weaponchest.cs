@@ -8,6 +8,8 @@ public class weaponchest : MonoBehaviour
     public Animator animator;
     public GameObject weapon1;
     public GameObject weapon2;
+    public GameObject weapon3;
+    public GameObject weapon4;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,14 +27,23 @@ public class weaponchest : MonoBehaviour
     }
     private void finish()
     {
-        int weapon = Random.Range(0, 2);
-            if (weapon == 0)
-            {
-                weapon1.transform.position=new Vector3(transform.position.x, transform.position.y+1, transform.position.z);
-            }
-            else
-            {
-                weapon2.transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-            }
+        int weapon = Random.Range(0, 4);
+        //Instantiate(weapon1, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), new Quaternion(0, 0, 0, 0));
+        if (weapon == 0)
+        {
+            Instantiate(weapon1, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), new Quaternion(0, 0, 0, 0));
+        }
+        else if(weapon==1)
+        {
+            Instantiate(weapon2, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), new Quaternion(0, 0, 0, 0));
+        }
+        else if (weapon == 2)
+        {
+            Instantiate(weapon3, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), new Quaternion(0, 0, 0, 0));
+        }
+        else
+        {
+            Instantiate(weapon4, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), new Quaternion(0, 0, 0, 0));
+        }
     }
 }
