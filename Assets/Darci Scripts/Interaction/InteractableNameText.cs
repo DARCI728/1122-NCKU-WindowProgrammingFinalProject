@@ -48,7 +48,5 @@ public class InteractableNameText : MonoBehaviour {
         } else {
             print("Error, no collider found!");
         }
-
-
     }
 }

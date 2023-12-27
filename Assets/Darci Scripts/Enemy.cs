@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour {
     [SerializeField] float health = 3;
+    [SerializeField] Transform canvas;
     [SerializeField] GameObject hitVFX;
     [SerializeField] GameObject ragdoll;
-
+    
     [Header("Combat")]
     [SerializeField] float attackCD = 3f;
     [SerializeField] float attackRange = 1f;
@@ -23,10 +26,11 @@ public class Enemy : MonoBehaviour {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         player = GameObject.Find("Player");
+        canvas = this.transform.Find("Canvas");
     }
 
-    // Update is called once per frame
     void Update() {
+
         animator.SetFloat("speed", agent.velocity.magnitude / agent.speed);
 
         if (player == null) {
@@ -65,6 +69,7 @@ public class Enemy : MonoBehaviour {
     public void TakeDamage(float damageAmount) {
         health -= damageAmount;
         animator.SetTrigger("damage");
+        PopUpHurtValue(damageAmount);
         CameraShake.Instance.ShakeCamera(2f, 0.2f);
 
         if (health <= 0) {
@@ -88,5 +93,13 @@ public class Enemy : MonoBehaviour {
         Gizmos.DrawWireSphere(transform.position, attackRange);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, aggroRange);
+    }
+
+    void PopUpHurtValue(float value) {
+        canvas = this.transform.Find("Canvas");
+        GameObject hurtValue = Instantiate(Resources.Load<GameObject>("Damage Number"), canvas);
+        hurtValue.GetComponent<TextMeshProUGUI>().text = value.ToString();
+        hurtValue.transform.localPosition = new Vector3(Random.Range(-2f, 2f), Random.Range(0, 1f), 0);
+        Destroy(hurtValue, 10f);
     }
 }
