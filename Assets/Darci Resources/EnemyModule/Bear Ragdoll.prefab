@@ -808,7 +808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1534320176241d447b4c41f6addbe0dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vanashTime: 10
+  vanashTime: 5
 --- !u!1 &2710465823980269069
 GameObject:
   m_ObjectHideFlags: 0

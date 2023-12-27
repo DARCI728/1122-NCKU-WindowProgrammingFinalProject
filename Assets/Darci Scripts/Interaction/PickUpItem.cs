@@ -19,6 +19,10 @@ public class PickUpItem : Interactable {
     protected override void Interaction() {
         base.Interaction();
 
+        if (this.tag == "Buff") {
+            return;
+        }
+
         if (equipmentSystem.currentWeaponInSheath != null) {
             equipmentSystem.weapon = weapon;
 
@@ -30,7 +34,7 @@ public class PickUpItem : Interactable {
 
             Destroy(equipmentSystem.currentWeaponInSheath);
             equipmentSystem.currentWeaponInSheath = Instantiate(weapon, equipmentSystem.weaponSheath.transform);
-            
+
             Destroy(this.gameObject);
         }
     }

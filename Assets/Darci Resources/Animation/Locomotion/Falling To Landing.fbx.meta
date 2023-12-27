@@ -36,7 +36,7 @@ ModelImporter:
       name: player_land
       takeName: mixamo.com
       internalID: -203655887218126122
-      firstFrame: 10
+      firstFrame: 6
       lastFrame: 32
       wrapMode: 0
       orientationOffsetY: 0

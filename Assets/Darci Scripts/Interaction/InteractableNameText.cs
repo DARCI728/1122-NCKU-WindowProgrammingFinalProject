@@ -16,6 +16,8 @@ public class InteractableNameText : MonoBehaviour {
     public void ShowText(Interactable interactable) {
         if (interactable is PickUpItem) {
             text.text = interactable.interactableName + "\n [E] Pick Up";
+        } else if (interactable is PickUpBuff) {
+            text.text = interactable.interactableName + "\n Pick Up";
         } else if (interactable is InteractableChest) {
             if (((InteractableChest)interactable).isOpen) {
                 text.text = interactable.interactableName + "\n ";

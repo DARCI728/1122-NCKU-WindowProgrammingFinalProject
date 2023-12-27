@@ -518,6 +518,7 @@ GameObject:
   - component: {fileID: 5035681929030209319}
   - component: {fileID: 7943014167238917799}
   - component: {fileID: 5453570237405928793}
+  - component: {fileID: 7617875148443598421}
   m_Layer: 10
   m_Name: Fantasy_Polygon_Chest_level_03
   m_TagString: Untagged
@@ -534,7 +535,7 @@ Transform:
   m_GameObject: {fileID: 5899634558836738179}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 87.33846, y: 1.8964838, z: 153.3881}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -600,9 +601,26 @@ MonoBehaviour:
   interactableName: Weapon Chest (60$)
   interactionDistance: 2
   isInteractable: 1
-  isLocked: 0
   chestID: 
+  need_coins: 60
   isOpen: 0
+--- !u!114 &7617875148443598421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5899634558836738179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5432ce19fe64924484133824d37bdd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 5035681929030209319}
+  weapon1: {fileID: 3392232941468349499, guid: d089b90befb9fa34f9dbf54331385d25, type: 3}
+  weapon2: {fileID: 3392232941468349499, guid: d089b90befb9fa34f9dbf54331385d25, type: 3}
+  weapon3: {fileID: 5420172592679398215, guid: d06e23488a6ed5d41b950d8f1e04a28e, type: 3}
+  weapon4: {fileID: 5420172592679398215, guid: d06e23488a6ed5d41b950d8f1e04a28e, type: 3}
 --- !u!1 &5942121086486124145
 GameObject:
   m_ObjectHideFlags: 0

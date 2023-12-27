@@ -118,15 +118,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400014, guid: 6fe60a1f58017004ba36e5dba726da31, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 90.57117
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400014, guid: 6fe60a1f58017004ba36e5dba726da31, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.7563063
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400014, guid: 6fe60a1f58017004ba36e5dba726da31, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 157.29478
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400014, guid: 6fe60a1f58017004ba36e5dba726da31, type: 3}
       propertyPath: m_LocalRotation.w
@@ -170,7 +170,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100014, guid: 6fe60a1f58017004ba36e5dba726da31, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6073768444427562787}
+    - targetCorrespondingSourceObject: {fileID: 100014, guid: 6fe60a1f58017004ba36e5dba726da31, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5705325161772360754}
   m_SourcePrefab: {fileID: 100100000, guid: 6fe60a1f58017004ba36e5dba726da31, type: 3}
+--- !u!95 &7924175687666153727 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: 6fe60a1f58017004ba36e5dba726da31, type: 3}
+  m_PrefabInstance: {fileID: 7924175687675563423}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7924175687675661105 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100014, guid: 6fe60a1f58017004ba36e5dba726da31, type: 3}
@@ -212,6 +220,23 @@ MonoBehaviour:
   interactableName: Buff Chest (30$)
   interactionDistance: 2
   isInteractable: 1
-  isLocked: 0
   chestID: 
+  need_coins: 30
   isOpen: 0
+--- !u!114 &5705325161772360754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7924175687675661105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d6b3d47d2700c44929bbbcfbada752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 7924175687666153727}
+  buff1: {fileID: 2047650052256919709, guid: c08837040bac90447be22e656138368b, type: 3}
+  buff2: {fileID: 3040192540938242269, guid: 7d028e5005ac6f942824f9099e3aabfc, type: 3}
+  buff3: {fileID: 3061641988485573930, guid: cfeef1d517e217e4699f387b0013226f, type: 3}
+  buff4: {fileID: 3958098476974605783, guid: ccb772be8e5794940be92358f697db45, type: 3}
