@@ -6,31 +6,47 @@ using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour {
-    [SerializeField] float health = 3;
-    [SerializeField] Transform canvas;
+    [SerializeField] float health = 10;
+    [SerializeField] int dropCoin = 2;
     [SerializeField] GameObject hitVFX;
     [SerializeField] GameObject ragdoll;
-    
+
     [Header("Combat")]
     [SerializeField] float attackCD = 3f;
     [SerializeField] float attackRange = 1f;
     [SerializeField] float aggroRange = 4f;
 
     GameObject player;
+    GameObject Timer;
+    coinui coin;
+    Transform canvas;
+
     NavMeshAgent agent;
     Animator animator;
+
     float timePassed;
     float newDestinationCD = 0.5f;
+    float time;
 
     void Start() {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         player = GameObject.Find("Player");
+        time = GameObject.Find("Timer").GetComponent<Timer>().time;
+        coin = GameObject.Find("UI/Screen Space Canvas/money").GetComponent<coinui>();
         canvas = this.transform.Find("Canvas");
+
+        float multiplier = (int)(time / 180) * 0.2f + 1f;
+        health *= multiplier;
+
+        EnemyDamageDealer[] damageDealers = GetComponentsInChildren<EnemyDamageDealer>();
+
+        foreach (EnemyDamageDealer damageDealer in damageDealers) {
+            damageDealer.weaponDamage *= multiplier;
+        }
     }
 
     void Update() {
-
         animator.SetFloat("speed", agent.velocity.magnitude / agent.speed);
 
         if (player == null) {
@@ -64,6 +80,7 @@ public class Enemy : MonoBehaviour {
     void Die() {
         Instantiate(ragdoll, transform.position, transform.rotation);
         Destroy(this.gameObject);
+        coin.money += dropCoin;
     }
 
     public void TakeDamage(float damageAmount) {
@@ -77,10 +94,18 @@ public class Enemy : MonoBehaviour {
         }
     }
     public void StartDealDamage() {
-        GetComponentInChildren<EnemyDamageDealer>().StartDealDamage();
+        EnemyDamageDealer[] damageDealers = GetComponentsInChildren<EnemyDamageDealer>();
+
+        foreach (EnemyDamageDealer damageDealer in damageDealers) {
+            damageDealer.StartDealDamage();
+        }
     }
     public void EndDealDamage() {
-        GetComponentInChildren<EnemyDamageDealer>().EndDealDamage();
+        EnemyDamageDealer[] damageDealers = GetComponentsInChildren<EnemyDamageDealer>();
+
+        foreach (EnemyDamageDealer damageDealer in damageDealers) {
+            damageDealer.EndDealDamage();
+        }
     }
 
     public void HitVFX(Vector3 hitPosition) {

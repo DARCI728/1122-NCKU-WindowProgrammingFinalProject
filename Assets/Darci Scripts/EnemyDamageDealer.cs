@@ -7,7 +7,8 @@ public class EnemyDamageDealer : MonoBehaviour {
     bool hasDealtDamage;
 
     [SerializeField] float weaponLength;
-    [SerializeField] float weaponDamage;
+    public float weaponDamage;
+
     void Start() {
         canDealDamage = false;
         hasDealtDamage = false;

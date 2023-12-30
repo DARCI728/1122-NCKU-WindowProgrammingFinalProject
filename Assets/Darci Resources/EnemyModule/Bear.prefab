@@ -706,7 +706,7 @@ Transform:
   m_GameObject: {fileID: 2911951691946084897}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.9786528, z: 0, w: -0.2055208}
-  m_LocalPosition: {x: 84.63208, y: 1.107, z: 169.45323}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -794,7 +794,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 30
-  canvas: {fileID: 2883147933514124581}
+  dropCoin: 2
   hitVFX: {fileID: 1743637094903878, guid: 021a2f7a2c5bc4449b4c64a66a050e8c, type: 3}
   ragdoll: {fileID: 2679415228248339706, guid: 01ad6dd4252805446b972f3c1fab8230, type: 3}
   attackCD: 3
@@ -932,6 +932,7 @@ Transform:
   m_Children:
   - {fileID: 3404575026171013201}
   - {fileID: 8857692089806407402}
+  - {fileID: 6210111701185544057}
   m_Father: {fileID: 501696069690090539}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3078656557473613341
@@ -1105,6 +1106,52 @@ Transform:
   - {fileID: 7498156732054255309}
   m_Father: {fileID: 4085928998577280739}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3379691540012869175
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1870351129047794175}
+  - component: {fileID: 3046701109488416868}
+  m_Layer: 9
+  m_Name: DamageDealer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1870351129047794175
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3379691540012869175}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.01, y: -0, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6470625596449481462}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &3046701109488416868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3379691540012869175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fcf336722b310340a0e5ee3e4b44e9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponLength: 1
+  weaponDamage: 5
 --- !u!1 &3429115154835404786
 GameObject:
   m_ObjectHideFlags: 0
@@ -1936,8 +1983,55 @@ Transform:
   m_Children:
   - {fileID: 7451963930001216511}
   - {fileID: 7341140977250203394}
+  - {fileID: 1870351129047794175}
   m_Father: {fileID: 2168771522355424843}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6682157713384532128
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6210111701185544057}
+  - component: {fileID: 1065187512787306999}
+  m_Layer: 9
+  m_Name: DamageDealer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6210111701185544057
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6682157713384532128}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.71592814, y: -0.0000041697626, z: 0.0077151116, w: 0.6981314}
+  m_LocalPosition: {x: -0.15, y: 0, z: 0.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6795975612903411}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &1065187512787306999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6682157713384532128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fcf336722b310340a0e5ee3e4b44e9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponLength: 1
+  weaponDamage: 5
 --- !u!1 &6877229569748954886
 GameObject:
   m_ObjectHideFlags: 0

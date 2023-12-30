@@ -552,7 +552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1034204831601778681}
   coinui: {fileID: 0}
-  coin: 100
+  coin: 10
 --- !u!1 &7028945278990540571
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,23 +26,28 @@ public class BuffSystem : MonoBehaviour {
 
         if (otherObject == max_health_buff) {
             if (health_system.max_health < 200) {
-                health_system.max_health += 5;
-                Debug.Log("HP++");
+                health_system.max_health += 20;
             }
         }
 
         if (otherObjectName == defense_buff.name) {
-            health_system.defense += 2;
+            if (health_system.defense < 10) {
+                health_system.defense += 2;
+            }
         }
 
         if (otherObjectName == speed_buff.name) {
-            character.playerSpeed += 1f;
-            character.crouchSpeed += 1f;
-            character.sprintSpeed += 1f;
+            if (character.playerSpeed < 10f) {
+                character.playerSpeed += 1f;
+                character.crouchSpeed += 1f;
+                character.sprintSpeed += 1f;
+            }
         }
 
         if (otherObjectName == max_health_buff.name) {
-            character.jumpHeight += 0.2f;
+            if (character.jumpHeight < 2f) {
+                character.jumpHeight += 0.2f;
+            }
         }
     }
 }

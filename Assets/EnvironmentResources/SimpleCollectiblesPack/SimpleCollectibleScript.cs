@@ -1,34 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(AudioSource))]
 public class SimpleCollectibleScript : MonoBehaviour {
 
-    public enum CollectibleTypes { NoType, HP, Defense, Speed, JumpHeight, Type5 }; // you can replace this with your own labels for the types of collectibles in your game!
-
-    public CollectibleTypes CollectibleType; // this gameObject's type
-
-    public bool rotate; // do you want it to rotate?
-
+    public enum CollectibleTypes { NoType, HP, Defense, Speed, JumpHeight, Type5 };
+    public CollectibleTypes CollectibleType;
+    public bool rotate;
     public float rotationSpeed;
-
     public AudioClip collectSound;
-
     public GameObject collectEffect;
-
+    
     GameObject player;
+    GameObject healt_bar_red;
+    GameObject healt_bar_green;
+
     Character character;
     HealthSystem healthSystem;
 
-    // Use this for initialization
     void Start() {
         player = GameObject.Find("Player");
         character = player.GetComponent<Character>();
         healthSystem = character.GetComponent<HealthSystem>();
+        healt_bar_red = GameObject.Find("UI/Screen Space Canvas/Health Bar Red");
+        healt_bar_green = GameObject.Find("UI/Screen Space Canvas/Health Bar Green");
     }
 
-    // Update is called once per frame
     void Update() {
         if (rotate)
             transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime, Space.World);
@@ -46,44 +45,52 @@ public class SimpleCollectibleScript : MonoBehaviour {
         if (collectEffect)
             Instantiate(collectEffect, transform.position, Quaternion.identity);
 
-        //Below is space to add in your code for what happens based on the collectible type
 
         if (CollectibleType == CollectibleTypes.NoType) {
-
-            //Add in code here;
-
             Debug.Log("Do NoType Command");
         }
+
         if (CollectibleType == CollectibleTypes.HP) {
-            healthSystem.max_health += 10;
+            if (healthSystem.max_health < 200) {
+                healthSystem.max_health += 20;
+            }
 
-            Debug.Log("Do NoType Command");
+            Vector3 currrent_position = healt_bar_red.transform.position;
+            Vector3 currrent_scale = healt_bar_red.transform.localScale;
+            currrent_position.x += 30;
+            currrent_scale.x += 0.1f;
+            healt_bar_green.transform.position = currrent_position;
+            healt_bar_green.transform.localScale = currrent_scale;
+            healt_bar_red.transform.position = currrent_position;
+            healt_bar_red.transform.localScale = currrent_scale;
+
+            float hp_percent = healthSystem.health / healthSystem.max_health;
+            healt_bar_green.GetComponent<Image>().fillAmount = hp_percent;
         }
+
         if (CollectibleType == CollectibleTypes.Defense) {
-            healthSystem.defense += 2;
-            
-            Debug.Log("Do NoType Command");
+            if (healthSystem.defense < 10) {
+                healthSystem.defense += 2;
+            }
         }
-        if (CollectibleType == CollectibleTypes.Speed) {
-            character.playerSpeed += 1f;
-            character.crouchSpeed += 1f;
-            character.sprintSpeed += 1f;
 
-            Debug.Log("Do NoType Command");
+        if (CollectibleType == CollectibleTypes.Speed) {
+            if (character.playerSpeed < 10f) {
+                character.playerSpeed += 1f;
+                character.crouchSpeed += 1f;
+                character.sprintSpeed += 1f;
+            }
         }
+
         if (CollectibleType == CollectibleTypes.JumpHeight) {
             character.jumpHeight += 0.2f;
-
-            Debug.Log("Do NoType Command");
         }
         if (CollectibleType == CollectibleTypes.Type5) {
-
-            //Add in code here;
-
-            Debug.Log("Do NoType Command");
+            if (character.jumpHeight < 2f) {
+                character.jumpHeight += 0.2f;
+            }
         }
 
-        gameObject.SetActive(false);
-        //Destroy (gameObject);
+        Destroy(gameObject);
     }
 }
