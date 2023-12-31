@@ -15,7 +15,6 @@ public class Timer : MonoBehaviour {
         time += Time.deltaTime;
 
         Vector3 vector3 = pointer.transform.position;
-        Debug.Log(vector3.x.ToString());
         if (vector3.x < 1880) {
             vector3.x += (100f/180f) * Time.deltaTime;
             pointer.transform.position = vector3;

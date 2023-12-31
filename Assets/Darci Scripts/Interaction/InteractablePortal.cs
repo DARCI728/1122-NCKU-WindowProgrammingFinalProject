@@ -1,21 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InteractablePortal : Interactable {
     [Header("Item Data")]
     [SerializeField] string itemName;
-
-    GameObject player;
+    [SerializeField] int destinationScene;
 
     public override void Start() {
         base.Start();
         interactableName = itemName;
-        player = GameObject.Find("Player");
     }
 
     protected override void Interaction() {
         base.Interaction();
-
+        SceneManager.LoadSceneAsync(destinationScene);
     }
 }

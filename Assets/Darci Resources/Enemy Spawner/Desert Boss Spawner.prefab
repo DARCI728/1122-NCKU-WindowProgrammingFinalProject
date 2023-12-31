@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6541930065608939681
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2392254231122017546}
+  - component: {fileID: 9005421059264738579}
+  m_Layer: 0
+  m_Name: Desert Boss Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2392254231122017546
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6541930065608939681}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.07073103, y: -0.03380982, z: -0.027023828, w: 0.996556}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 656722998599483980}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 7.999, y: -4.124, z: -3.395}
+--- !u!114 &9005421059264738579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6541930065608939681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a27b9589b62ac32478602ab5ad34a3e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 5886713191198217777, guid: a93b0b31982d95c48aa7f0edd896a4c9, type: 3}
+  enemyMax: 1
+  enemyMaxSpawnOneTime: 1
+  intervalTime: 1
+  random_spawn: 0
+  spawn_distance: 15
+--- !u!1001 &6981551853864942364
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2392254231122017546}
+    m_Modifications:
+    - target: {fileID: 5728758646668235248, guid: f377f3e4920c4eb42b5c4848500be374, type: 3}
+      propertyPath: m_Name
+      value: Magic circle 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7637632717605894480, guid: f377f3e4920c4eb42b5c4848500be374, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7637632717605894480, guid: f377f3e4920c4eb42b5c4848500be374, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7637632717605894480, guid: f377f3e4920c4eb42b5c4848500be374, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7637632717605894480, guid: f377f3e4920c4eb42b5c4848500be374, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99813485
+      objectReference: {fileID: 0}
+    - target: {fileID: 7637632717605894480, guid: f377f3e4920c4eb42b5c4848500be374, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.061048605
+      objectReference: {fileID: 0}
+    - target: {fileID: 7637632717605894480, guid: f377f3e4920c4eb42b5c4848500be374, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7637632717605894480, guid: f377f3e4920c4eb42b5c4848500be374, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7637632717605894480, guid: f377f3e4920c4eb42b5c4848500be374, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7637632717605894480, guid: f377f3e4920c4eb42b5c4848500be374, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7637632717605894480, guid: f377f3e4920c4eb42b5c4848500be374, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f377f3e4920c4eb42b5c4848500be374, type: 3}
+--- !u!4 &656722998599483980 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7637632717605894480, guid: f377f3e4920c4eb42b5c4848500be374, type: 3}
+  m_PrefabInstance: {fileID: 6981551853864942364}
+  m_PrefabAsset: {fileID: 0}

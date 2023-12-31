@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour {
     [SerializeField] int dropCoin = 2;
     [SerializeField] GameObject hitVFX;
     [SerializeField] GameObject ragdoll;
+    [SerializeField] GameObject portal;
 
     [Header("Combat")]
     [SerializeField] float attackCD = 3f;
@@ -79,6 +80,14 @@ public class Enemy : MonoBehaviour {
 
     void Die() {
         Instantiate(ragdoll, transform.position, transform.rotation);
+
+        if (this.tag == "Boss") {
+            Vector3 vector3 = transform.position;
+            vector3.x += 5;
+            vector3.y += 3;
+            Instantiate(portal, vector3, transform.rotation);
+        }
+
         Destroy(this.gameObject);
         coin.money += dropCoin;
     }

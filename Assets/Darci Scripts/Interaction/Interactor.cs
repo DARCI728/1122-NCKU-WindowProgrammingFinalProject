@@ -10,7 +10,6 @@ public class Interactor : MonoBehaviour {
     Transform cameraTransform;
     InputAction interactAction;
 
-    //For Gizmo
     Vector3 origin;
     Vector3 direction;
     Vector3 hitPosition;

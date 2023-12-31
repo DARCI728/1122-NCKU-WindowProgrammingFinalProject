@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3180071849130111225}
   - component: {fileID: 4768469491718243872}
   - component: {fileID: 2537336668367948710}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Distortion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4899,7 +4899,7 @@ GameObject:
   - component: {fileID: 1572882792723205420}
   - component: {fileID: 6089309262537147609}
   - component: {fileID: 3810217772984650109}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CircleSparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9738,7 +9738,7 @@ GameObject:
   - component: {fileID: 5537024319789212686}
   - component: {fileID: 8709185965347038847}
   - component: {fileID: 8377176256683275193}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14577,7 +14577,9 @@ GameObject:
   - component: {fileID: 3343845395269095042}
   - component: {fileID: 769288115888922666}
   - component: {fileID: 4522861761903711371}
-  m_Layer: 0
+  - component: {fileID: 3551419257071685323}
+  - component: {fileID: 5217673660745296620}
+  m_Layer: 10
   m_Name: Portal yellow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14594,7 +14596,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1572882792723205420}
@@ -19457,3 +19459,41 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!65 &3551419257071685323
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7816511879051301329}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1.5, z: 0}
+  m_Center: {x: 0, y: -0.5, z: 0}
+--- !u!114 &5217673660745296620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7816511879051301329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1042fe361dfd174cbc9e6c4869be164, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableName: Portal
+  interactionDistance: 4
+  isInteractable: 1
+  itemName: Portal
+  destinationScene: 2

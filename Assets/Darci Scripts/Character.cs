@@ -75,7 +75,4 @@ public class Character : MonoBehaviour {
     private void FixedUpdate() {
         movementSM.currentState.PhysicsUpdate();
     }
-    public void TeleportTo(Transform destination) {
-        transform.position = destination.position;
-    }
 }

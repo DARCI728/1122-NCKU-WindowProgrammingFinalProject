@@ -24,6 +24,8 @@ public class InteractableChest : Interactable {
         if (this.tag == "Robot") {
             droneai = this.GetComponent<droneai>();
         }
+
+        RandomRotate();
     }
 
     public void Update() {
@@ -55,5 +57,10 @@ public class InteractableChest : Interactable {
     void OpenChest() {
         animator.SetTrigger("OpenChest");
         isOpen = !isOpen;
+    }
+
+    void RandomRotate() {
+        float randomYRotation = Random.Range(0f, 360f);
+        transform.rotation = Quaternion.Euler(0f, randomYRotation, 0f);
     }
 }
