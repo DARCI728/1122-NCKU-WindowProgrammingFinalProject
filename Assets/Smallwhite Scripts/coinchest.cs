@@ -5,15 +5,18 @@ using UnityEngine.UI;
 
 public class coinchest : MonoBehaviour {
     public Animator animator;
-    public GameObject coinui;
-    public int coin = 60;
+    public int coin;
     float duration = 1.5f;
+    
+    GameObject coinui;
 
     void Update() {
         if (animator.GetBool("havopened")) {
             animator.SetBool("havopened", false);
             Invoke(nameof(finish), duration);
         }
+
+        coinui = GameObject.Find("UI/Screen Space Canvas/money");
     }
 
     private void finish() {

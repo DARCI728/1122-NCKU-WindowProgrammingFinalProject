@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponLength: 2
   weaponDamage: 10
-  hitVFX: {fileID: 1789270911803724, guid: 3f0def245cefa134c838d34a7f6d2556, type: 3}
+  hitVFX: {fileID: 1872147318604286, guid: 5bea49531fc500c408823a2e2863106f, type: 3}
 --- !u!1 &7263736071446833827
 GameObject:
   m_ObjectHideFlags: 0

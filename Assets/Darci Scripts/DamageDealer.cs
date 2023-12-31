@@ -41,7 +41,11 @@ public class DamageDealer : MonoBehaviour {
     }
 
     public void HitVFX(Vector3 hitPosition) {
-        Quaternion rotation = Quaternion.Euler(0f, 135f, 0f);
+        Camera mainCamera = Camera.main;
+        Vector3 cameraPosition = mainCamera.transform.position;
+        Vector3 lookDirection = hitPosition - cameraPosition;
+        float angle = Mathf.Atan2(lookDirection.x, lookDirection.z) * Mathf.Rad2Deg;
+        Quaternion rotation = Quaternion.Euler(0f, angle, 0f);
         GameObject hit = Instantiate(hitVFX, hitPosition, rotation);
         Destroy(hit, 1f);
     }

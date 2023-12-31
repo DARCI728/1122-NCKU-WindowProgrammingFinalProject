@@ -8,7 +8,7 @@ public class EnemySpawner : MonoBehaviour {
     public int enemyMaxSpawnOneTime = 2;
     public float intervalTime = 5;
     public float random_spawn = 15;
-    public float spawn_distance = 20;
+    public float spawn_distance = 25;
     float distance;
 
     GameObject player;
@@ -27,6 +27,11 @@ public class EnemySpawner : MonoBehaviour {
 
         if (distance < spawn_distance) {
             if (enemyCount >= enemyMax) {
+                Transform vfx = this.transform.Find("Magic circle 2");
+
+                if (vfx != null) {
+                    Destroy(vfx.gameObject, 5f);
+                }
                 return;
             }
 
@@ -35,7 +40,7 @@ public class EnemySpawner : MonoBehaviour {
             if (timer <= 0) {
                 timer = intervalTime;
 
-                int enemySpawnNum = Random.Range(1, enemyMaxSpawnOneTime);
+                int enemySpawnNum = Random.Range(1, enemyMaxSpawnOneTime + 1);
 
                 for (int i = 0; i < enemySpawnNum; i++) {
                     Vector3 vector3 = transform.position;
@@ -45,12 +50,10 @@ public class EnemySpawner : MonoBehaviour {
 
                     Instantiate(enemy, vector3, Quaternion.identity);
                     enemyCount++;
-                }
 
-                Transform vfx = this.transform.Find("Magic circle 2");
-
-                if (vfx != null) {
-                    Destroy(vfx.gameObject, 1f);
+                    if (enemyCount >= enemyMax) {
+                        return;
+                    }
                 }
             }
         }

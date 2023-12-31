@@ -129,5 +129,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponLength: 2.4
-  weaponDamage: 30
+  weaponDamage: 28
   hitVFX: {fileID: 1485466043327710, guid: 3e914ef784028124db1daf7002a87cc8, type: 3}

@@ -28,6 +28,8 @@ public class InteractableNameText : MonoBehaviour {
             text.text = interactable.interactableName + "\n [E] Loot";
         } else if (interactable is InteractableNPC) {
             text.text = interactable.interactableName + "\n [E] Speak";
+        } else if (interactable is InteractablePortal) {
+            text.text = interactable.interactableName + "\n [E] Teleport";
         } else {
             text.text = interactable.interactableName;
         }
