@@ -9766,7 +9766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactableName: Portal
-  interactionDistance: 4
+  interactionDistance: 6
   isInteractable: 1
   itemName: Portal
   destinationScene: 1

@@ -50,7 +50,7 @@ MonoBehaviour:
   enemyMaxSpawnOneTime: 1
   intervalTime: 1
   random_spawn: 0
-  spawn_distance: 15
+  spawn_distance: 10
 --- !u!1001 &6086434909923909010
 PrefabInstance:
   m_ObjectHideFlags: 0

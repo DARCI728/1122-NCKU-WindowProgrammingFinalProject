@@ -84,7 +84,7 @@ public class Enemy : MonoBehaviour {
         if (this.tag == "Boss") {
             Vector3 vector3 = transform.position;
             vector3.x += 5;
-            vector3.y += 3;
+            vector3.y += 2;
             Instantiate(portal, vector3, transform.rotation);
         }
 

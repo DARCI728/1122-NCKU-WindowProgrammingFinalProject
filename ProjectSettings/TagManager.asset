@@ -12,6 +12,7 @@ TagManager:
   - Robot
   - Buff
   - Boss
+  - BuffDrone
   layers:
   - Default
   - TransparentFX

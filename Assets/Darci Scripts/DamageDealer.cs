@@ -7,7 +7,7 @@ public class DamageDealer : MonoBehaviour {
     List<GameObject> hasDealtDamage;
 
     [SerializeField] float weaponLength;
-    [SerializeField] public float weaponDamage;
+    public int weaponDamage;
     [SerializeField] GameObject hitVFX;
 
     void Start() {

@@ -5,6 +5,7 @@ using UnityEngine;
 public class InteractableChest : Interactable {
     private GameObject canves;
     private droneai droneai;
+    private BuffDrone buffDrone;
     private Animator animator;
     private BoxCollider boxCollider;
 
@@ -25,6 +26,10 @@ public class InteractableChest : Interactable {
             droneai = this.GetComponent<droneai>();
         }
 
+        if (this.tag == "BuffDrone") {
+            buffDrone = this.GetComponent<BuffDrone>();
+        }
+
         RandomRotate();
     }
 
@@ -39,6 +44,15 @@ public class InteractableChest : Interactable {
         if (this.tag == "Robot") {
             if (coins >= need_coins) {
                 droneai.triggered = true;
+                boxCollider.enabled = false;
+                canves.GetComponent<coinui>().money -= need_coins;
+                return;
+            }
+        }
+
+        if (this.tag == "BuffDrone") {
+            if (coins >= need_coins) {
+                buffDrone.triggered = true;
                 boxCollider.enabled = false;
                 canves.GetComponent<coinui>().money -= need_coins;
                 return;

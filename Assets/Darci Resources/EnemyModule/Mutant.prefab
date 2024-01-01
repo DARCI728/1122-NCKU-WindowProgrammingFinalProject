@@ -558,7 +558,8 @@ MonoBehaviour:
   dropCoin: 300
   hitVFX: {fileID: 1743637094903878, guid: 021a2f7a2c5bc4449b4c64a66a050e8c, type: 3}
   ragdoll: {fileID: 8042548232496462561, guid: 58e831ff7b64dda4f9b5f54dc889bbab, type: 3}
-  attackCD: 3
+  portal: {fileID: 3865209926004716285, guid: b9a89522a9beb20418d57ffc91340072, type: 3}
+  attackCD: 1.5
   attackRange: 6
   aggroRange: 15
 --- !u!4 &3076374958620066839 stripped
