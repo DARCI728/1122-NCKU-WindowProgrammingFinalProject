@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponLength: 6
-  weaponDamage: 15
+  weaponDamage: 40
 --- !u!1 &5855947790669500580
 GameObject:
   m_ObjectHideFlags: 0

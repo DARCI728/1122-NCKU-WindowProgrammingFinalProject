@@ -7043,7 +7043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponLength: 2.2
-  weaponDamage: 5
+  weaponDamage: 12
 --- !u!1 &7966258812468067752
 GameObject:
   m_ObjectHideFlags: 0
@@ -7440,7 +7440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponLength: 2.2
-  weaponDamage: 5
+  weaponDamage: 12
 --- !u!1 &8442657382241084030
 GameObject:
   m_ObjectHideFlags: 0

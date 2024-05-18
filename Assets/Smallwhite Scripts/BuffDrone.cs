@@ -15,6 +15,7 @@ public class BuffDrone : MonoBehaviour {
     bool adding = false;
 
     GameObject player;
+    GameObject weapon;
     DamageDealer damagedealer;
 
     void Start() {
@@ -22,7 +23,10 @@ public class BuffDrone : MonoBehaviour {
     }
 
     void Update() {
-        GameObject weapon = player.GetComponent<EquipmentSystem>().currentWeaponInHand;
+        if (player != null) {
+            weapon = player.GetComponent<EquipmentSystem>().currentWeaponInHand;
+        }
+
         if (weapon != null) {
             damagedealer = weapon.GetComponentInChildren<DamageDealer>();
         }
